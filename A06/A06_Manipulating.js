@@ -1,36 +1,6 @@
-//import product from "./uniqoProduct.js";
-let product = [{
-    productId: 'P001',
-    productname: 'iphone',
-    price: 15000,
-    stocks: 10
-}, {
-    productId: 'P002',
-    productname: 'ipad',
-    price: 10000,
-    stocks: 5
-}, {
-    productId: 'P003',
-    productname: 'ipod',
-    price: 5000,
-    stocks: 1
-}, {
-    productId: 'P004',
-    productname: 'ip',
-    price: 1000,
-    stocks: 3
-}, {
-    productId: 'P005',
-    productname: 'ipod2',
-    price: 10000,
-    stocks: 4
-}]
+import product from "./uniqoProduct.js";
 
-
-
-
-
-const productEle = document.querySelector('#products');
+const productEle = document.querySelector('body');
 
 for (let i = 0; i < product.length; i++) {
     let createDiv = document.createElement('div');
@@ -38,5 +8,23 @@ for (let i = 0; i < product.length; i++) {
     let append = productEle.appendChild(createDiv);
     let createP = document.createElement('p');
     createP.textContent = product[i].productname;
+    let createT = document.createElement('p');
+    createT.textContent = product[i].productType;
+    let createS = document.createElement('p');
+    createS.textContent = product[i].productSize;
+    let createD = document.createElement('p');
+    createD.textContent = product[i].productDesc;
+    let createPr = document.createElement('p');
+    createPr.textContent = product[i].productPrice;
+    let createI = document.createElement('img');
+    createI.src = product[i].img;
+    let createSt = document.createElement('p');
+    createSt.textContent = product[i].stock;
+    append.appendChild(createI)
     append.appendChild(createP);
+    append.appendChild(createT);
+    append.appendChild(createS);
+    append.appendChild(createD);
+    append.appendChild(createPr);
+    append.appendChild(createSt);
 }
